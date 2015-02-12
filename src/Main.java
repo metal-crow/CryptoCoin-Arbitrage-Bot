@@ -1,6 +1,7 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 import org.javatuples.Pair;
@@ -103,13 +104,36 @@ public class Main {
                 }
                 
                 //---------------------------------
-
+                DecimalFormat df=new DecimalFormat("#.0000");
+                
+                double how_much_usd_id_buy=0;
+                if(websitebuyat==0){
+                    String text=lowestsell.getText();
+                    how_much_usd_id_buy=Double.valueOf(text.substring(text.lastIndexOf(" ")));
+                    System.out.println(df.format("Buy $"+how_much_usd_id_buy+" from btce"));
+                }else if(websitebuyat==1){
+                    String text=lowestsell.getText();
+                    how_much_usd_id_buy=Double.valueOf(text.substring(text.lastIndexOf(" ")));
+                    System.out.println(df.format("Buy $"+how_much_usd_id_buy+" from bitstamp"));
+                }
+                double how_much_usd_id_sell=0;
+                if(websitesellat==0){
+                    String text=highestbuy.getText();
+                    how_much_usd_id_sell=Double.valueOf(text.substring(text.lastIndexOf(" ")));
+                    System.out.println(df.format("Sell $"+how_much_usd_id_sell+" to btce"));
+                }
+                else if(websitesellat==1){
+                    String text=highestbuy.getText();
+                    how_much_usd_id_sell=Double.valueOf(text.substring(0,text.indexOf(" ")));
+                    System.out.println(df.format("Sell $"+how_much_usd_id_sell+" to bitstamp"));
+                }
                 
                 if(lowestsellprice<highestbuyprice){
-                    System.out.println("Buy at "+websitebuyat+" for "+lowestsellprice+" (full info: "+lowestsell.getText()+") "
-                               + "and sell at "+websitesellat+" for "+highestbuyprice+" (full info: "+highestbuy.getText()+")");
+                    System.out.println("Buy at "+websitebuyat+" for "+lowestsellprice
+                               + " and sell at "+websitesellat+" for "+highestbuyprice
+                               + " for a profit of "+df.format(highestbuyprice-lowestsellprice)
+                               + " and an investment of "+df.format(how_much_usd_id_buy+how_much_usd_id_sell));
                 }
-                //System.out.println(lowestsellprice+" "+highestbuyprice);
                 
                 //rate limit myself
                 Thread.sleep(5000);
