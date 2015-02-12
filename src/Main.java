@@ -110,22 +110,22 @@ public class Main {
                 if(websitebuyat==0){
                     String text=lowestsell.getText();
                     how_much_usd_id_buy=Double.valueOf(text.substring(text.lastIndexOf(" ")));
-                    System.out.println(df.format("Buy $"+how_much_usd_id_buy+" from btce"));
+                    System.out.println("Buy $"+df.format(how_much_usd_id_buy)+" from btce");
                 }else if(websitebuyat==1){
                     String text=lowestsell.getText();
                     how_much_usd_id_buy=Double.valueOf(text.substring(text.lastIndexOf(" ")));
-                    System.out.println(df.format("Buy $"+how_much_usd_id_buy+" from bitstamp"));
+                    System.out.println("Buy $"+df.format(how_much_usd_id_buy)+" from bitstamp");
                 }
                 double how_much_usd_id_sell=0;
                 if(websitesellat==0){
                     String text=highestbuy.getText();
                     how_much_usd_id_sell=Double.valueOf(text.substring(text.lastIndexOf(" ")));
-                    System.out.println(df.format("Sell $"+how_much_usd_id_sell+" to btce"));
+                    System.out.println("Sell $"+df.format(how_much_usd_id_sell)+" to btce");
                 }
                 else if(websitesellat==1){
                     String text=highestbuy.getText();
                     how_much_usd_id_sell=Double.valueOf(text.substring(0,text.indexOf(" ")));
-                    System.out.println(df.format("Sell $"+how_much_usd_id_sell+" to bitstamp"));
+                    System.out.println("Sell $"+df.format(how_much_usd_id_sell)+" to bitstamp");
                 }
                 
                 if(lowestsellprice<highestbuyprice){
