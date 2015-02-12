@@ -78,8 +78,8 @@ public class Main {
                 
                 
                 //bitstamp
-                //first child is highest
-                WebElement bitstampbuy=bitstamp.findElement(By.xpath("//tbody[@id=\"asks\"]/tr[1]"));
+                //first child is highest (these people are buying, so we sell to them)
+                WebElement bitstampbuy=bitstamp.findElement(By.xpath("//tbody[@id=\"bids\"]/tr[1]"));
                 double tmp=Double.valueOf(bitstampbuy.findElement(By.xpath("//td[@class=\"price\"]")).getText());
                 if(tmp>highestbuyprice){
                     highestbuyprice=tmp;
@@ -87,9 +87,9 @@ public class Main {
                     websitesellat=1;//buying website is now bitstamp
                 }
                 //first child is lowest
-                WebElement bitstampsells=bitstamp.findElement(By.xpath("//tbody[@id=\"bids\"]/tr[1]"));
+                WebElement bitstampsells=bitstamp.findElement(By.xpath("//tbody[@id=\"asks\"]/tr[1]"));
                 double tmp1=Double.valueOf(bitstampsells.findElement(By.xpath("//td[@class=\"price\"]")).getText());
-                if(tmp<lowestsellprice){
+                if(tmp1<lowestsellprice){
                     lowestsellprice=tmp1;
                     lowestsell=bitstampsells;
                     websitebuyat=1;//selling website is now bitstamp
