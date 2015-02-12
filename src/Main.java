@@ -63,7 +63,8 @@ public class Main {
                 int websitesellat=0;//defaults to 0, btce
                 int websitebuyat=0;
                 
-                //btce
+                //------------btce------------
+                
                 //first child is the lowest
                 lowestsell=btce.findElement(By.xpath("//div[@id=\"orders-s-list\"]/*/*/*/tr[@class=\"order\"][1]"));
                 //element [2] is the amount being sold, [3] is the total cost
@@ -76,27 +77,37 @@ public class Main {
                 lowestsellprice=Double.valueOf(lowestsell.findElement(By.xpath("td[1]")).getText());
                 highestbuyprice=Double.valueOf(highestbuy.findElement(By.xpath("td[1]")).getText());
                 
+                //---------------------------------
+                //--------------bitstamp------------
                 
-                //bitstamp
                 //first child is highest (these people are buying, so we sell to them)
                 WebElement bitstampbuy=bitstamp.findElement(By.xpath("//tbody[@id=\"bids\"]/tr[1]"));
-                double tmp=Double.valueOf(bitstampbuy.findElement(By.xpath("//td[@class=\"price\"]")).getText());
+
+                //FIXME this sometimes doesnt update to reflect newest values, so a temp fix is just re-get the same parent element, this time with the child
+                double tmp=Double.valueOf(bitstamp.findElement(By.xpath("//tbody[@id=\"bids\"]/tr[1]/td[@class=\"price\"]")).getText());
                 if(tmp>highestbuyprice){
                     highestbuyprice=tmp;
                     highestbuy=bitstampbuy;
                     websitesellat=1;//buying website is now bitstamp
                 }
+                
                 //first child is lowest
                 WebElement bitstampsells=bitstamp.findElement(By.xpath("//tbody[@id=\"asks\"]/tr[1]"));
-                double tmp1=Double.valueOf(bitstampsells.findElement(By.xpath("//td[@class=\"price\"]")).getText());
+                
+                //FIXME this sometimes doesnt update to reflect newest values, so a temp fix is just re-get the same parent element, this time with the child
+                double tmp1=Double.valueOf(bitstamp.findElement(By.xpath("//tbody[@id=\"asks\"]/tr[1]/td[@class=\"price\"]")).getText());
                 if(tmp1<lowestsellprice){
                     lowestsellprice=tmp1;
                     lowestsell=bitstampsells;
                     websitebuyat=1;//selling website is now bitstamp
                 }
                 
+                //---------------------------------
+
+                
                 if(lowestsellprice<highestbuyprice){
-                    System.out.println("Buy at "+websitebuyat+" for "+lowestsellprice+" and sell at "+websitesellat+" for "+highestbuyprice);
+                    System.out.println("Buy at "+websitebuyat+" for "+lowestsellprice+" (full info: "+lowestsell.getText()+") "
+                               + "and sell at "+websitesellat+" for "+highestbuyprice+" (full info: "+highestbuy.getText()+")");
                 }
                 //System.out.println(lowestsellprice+" "+highestbuyprice);
                 
