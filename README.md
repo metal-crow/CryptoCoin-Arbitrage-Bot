@@ -8,3 +8,11 @@ bitstamp (need to verify to use api, or can use selenium (not selenium, differen
 
 
 Make sure profit difference is enough to offset transaction fee
+
+
+buy from place1 with the lower cost to buy. If i can buy for a $/bitcoin less that the minimum $/bitcoin being sold at place2, sell the amount i bought at place1 a price undercutting the minimum $/bitcion sell price at place2.
+
+ex: i buy from place 1 at their minimum buying price, 200$/coin. If everyone at place2 is buying for at most 220$/coin, sell the coins i just bought from place1 at place2 for 219$/coin.
+
+Buy at less $/coin than max place 2 is buying,And the amount I would buy at place 1 is less than the max amount place 2 is buying.
+Make sure I'm buying less coin than I have money to buy and can sell in place 2
