@@ -169,7 +169,6 @@ public class Main {
                 
                 while(index_to_buy_from<lowestsellers.size() && !doit){
                     Triplet<Double, Double, Double> seller=lowestsellers.get(index_to_buy_from);
-                    System.out.println(seller.getValue0());
                     //find seller to buy from in p1 who is selling less # of coins than the buyer in p2 who is buying the max # of coins.
                     //they also must be selling at lower $/coin than the buyer is buying at
                     //TODO i can further maxamize profit if i search highest buyers as well for a match

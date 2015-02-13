@@ -16,3 +16,5 @@ ex: i buy from place 1 at their minimum buying price, 200$/coin. If everyone at 
 
 Buy at less $/coin than max place 2 is buying,And the amount I would buy at place 1 is less than the max amount place 2 is buying.
 Make sure I'm buying less coin than I have money to buy and can sell in place 2
+
+Check current funds in account, make sure I have enough to buy
