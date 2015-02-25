@@ -18,4 +18,7 @@ list of possible markets
 | bitstamp 	| <b>NO</b> (INTERNATIONAL bank transfers only, 0.1% deposit fee on our side (minimum fee = $15) ) 	 | <b>YES</b>    |
 | bitbay   	| <b>Currently no<b/> Uses OKPay, which CURRENTLY doesnt support USA                               	 | <b>YES</b>    |
 | btc-e  	| <b>Currently no<b/> Uses OKPay, which CURRENTLY doesnt support USA                                 | <b>YES</b>    |
-| circle  	| <b>YES</b>                                                                                         | <b>NO</b>     |
+| circle  	| <b>???</b> are'nt responding to my verification requests                                           | <b>NO</b>     |
+| coincafe 	| <b>YES</b> NEED TO VERIFY                                                                          | <b>??</b>     |
+| trucoin 	| <b>NO</b> Not in usa                                                                               | <b>??</b>     |
+| coin.mx 	| <b>SCAM</b> www.reddit.com/r/Bitcoin/comments/2j7v1j/do_not_use_coinmx_the_website_is_a_scam/      | <b>NO</b>     |
