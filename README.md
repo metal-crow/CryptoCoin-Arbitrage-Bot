@@ -1,3 +1,4 @@
+```
 node balacing wont work, so linear path  
     -Transfer usd to lowest market  
     -buy btc  
@@ -29,3 +30,4 @@ list of possible markets(must accept usd for btc, debit cards, allow usa users, 
 | btc-e         | <b>Currently no<b/>                                                                                    | <b>YES</b>    |        662              |        662              |
 | 247exchange   | <b>Currently no</b>usa support in 2016-2017                                                            | <b>NO</b>     |        682              |        660              |
 | circle        | <b>YES</b>                                                                                             | <b>NO</b>     |        login issue      |                         |
+```
